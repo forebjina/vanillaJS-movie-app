@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Create Movie Search App</title>
+<link href="css/index.css" rel="styleSheet"/>
+<script src="js/index.js"></script>
+</head>
+<body>
+
+    <!--해야할일-->
+    <!--css정돈-->
+    <!--요청 API KEY 변경-->
+    <!--첫로딩시 개봉일자로 검색되도록 변경-->
+    <!--리스트가너무많을경우 경고창-->
+    <!--vs git upload-->
+    
+    <!--wrap-->
+    <div class="wrap">
+        <!--고정헤더 로고영역-->
+        <header class="header">
+            <div class="headerWrap">
+                <p class="title">영화검색사이트에 오신 것을 환영합니다</p>
+            </div>
+        </header>
+
+            <!--영화검색창-->
+            <div class="search">
+                <div class="searchWrap">
+                    <div class="searchBox">
+                        <input type="text" id="searchInp"/>
+                        <button type="button" id="searchBtn">조회</button>
+                    </div>
+                </div>
+            </div>
+
+        <!--contens영역-->
+        <div class="contents">
+            <!--api를 통해받아온 영화정보목록-->
+                <ul class="movieItemList" id="movieItemList">
+                    <!-- <li class="movieItem">
+                        <img class="movieImg">
+                        <p class="movieTit"> </p>
+                    </li>
+                    <li class="movieItem">
+                        <img class="movieImg">
+                        <p class="movieTit"> </p>
+                    </li>
+                    <li class="movieItem">
+                        <img class="movieImg">
+                        <p class="movieTit"> </p>
+                    </li> -->
+                </ul>
+        </div>
+   </div>
+   <!--//wrap-->
+</body>
+</html>

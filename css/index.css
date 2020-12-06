@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/*초기화*/
+body{margin:0; }
+ul,li{list-style:none;}
+p{margin:0;} /*header p 기본적으로 생기는 margin 초기화*/
+
+html,body{height:100%;}
+
+.wrap{
+    display:flex;
+    flex-direction: column;
+    height:100%;
+}
+
+/*header*/
+.header{
+    height:10vh;
+    background-color:#ccc;
+}
+.header .headerWrap .title{
+    text-align:center;
+    line-height:10vh;
+    
+}
+
+/*search*/
+.search .searchWrap{
+    position:relative;
+    height:8vh;
+    width:80vh;
+    margin:0 auto;
+    background-color:black;
+}
+
+.search .searchWrap .searchBox{
+    position:absolute;
+    right:0;
+}
+
+/*contents*/
+.contents{
+    display:flex;
+    flex:1;
+   overflow:auto;
+   background-color:blue;
+}
+.movieItemList {
+    width:80vh;
+    margin: 0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    padding:0 10px;
+    border:1px solid black;
+}
+
+.movieItemList .movieItem{
+    display:flex;
+    flex-direction:column;
+    flex:none; /*이거 모지?*/
+    flex-basis:33.33%;
+    margin-top:5vh;
+    padding:0 10px;
+    box-sizing:border-box;
+    border:1px solid black;
+    height: 35vh;
+}
+
+.movieItem .movieImg{
+    /* width:70%; */
+    height:80%;
+}
