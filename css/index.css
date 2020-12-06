@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /*초기화*/
-body{margin:0; }
+body{margin:0;}
 ul,li{list-style:none;}
 p{margin:0;} /*header p 기본적으로 생기는 margin 초기화*/
 
@@ -9,33 +9,35 @@ html,body{height:100%;}
 
 .wrap{
     display:flex;
-    flex-direction: column;
+    flex-direction:column;
     height:100%;
 }
 
 /*header*/
 .header{
-    height:10vh;
-    background-color:#ccc;
+    height: 14vh;
+    background-color:#d74630;
 }
 .header .headerWrap .title{
     text-align:center;
-    line-height:10vh;
-    
+    line-height:5vh;
 }
 
 /*search*/
-.search .searchWrap{
-    position:relative;
-    height:8vh;
-    width:80vh;
+.search{background-color:#f1f0e5;}
+
+.searchWrap{
+    width: 80vh;
+    height:5vh;
     margin:0 auto;
-    background-color:black;
 }
 
-.search .searchWrap .searchBox{
-    position:absolute;
-    right:0;
+.searchWrap .searchBox {
+    float:right;
+}
+
+.searchWrap .searchBox #searchVal{
+    border: 1px solid #ccc;
 }
 
 /*contents*/
@@ -43,30 +45,44 @@ html,body{height:100%;}
     display:flex;
     flex:1;
    overflow:auto;
-   background-color:blue;
+   background-color:#fdfcf0;
 }
 .movieItemList {
-    width:80vh;
-    margin: 0 auto;
+    width:83vh;
+    margin:0 auto;
     display:flex;
     flex-wrap:wrap;
     padding:0 10px;
-    border:1px solid black;
+    text-align:center;
+}
+
+.movieItemList .movieTit{
 }
 
 .movieItemList .movieItem{
     display:flex;
     flex-direction:column;
     flex:none; /*이거 모지?*/
-    flex-basis:33.33%;
+    flex-basis:32.9%;
+    /* flex-basis:33.33%; */
+    height: 45vh;
     margin-top:5vh;
+    margin-right:0.5vh;
     padding:0 10px;
     box-sizing:border-box;
-    border:1px solid black;
-    height: 35vh;
+    border:1px solid #ccc;
+    background-color:#e4e2cf;
+}
+.movieItemList .movieItem:nth-child(3n){
+    margin-right:0;
 }
 
 .movieItem .movieImg{
-    /* width:70%; */
-    height:80%;
+    height:75%;
+}
+
+.movieItem .movieYear{
+    line-height: 5vh;
+    font-weight: bold;
+    color: #6c6b6b;
 }
