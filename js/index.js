@@ -9,9 +9,27 @@ document.addEventListener('DOMContentLoaded', function(){
     //페이지 로딩시 'man'이라는 키워드로 영화 리스트 요청
     reqAjax(apiUrl, movieItemList);
 
-    //검색버튼 클릭시
     const searchVal = document.querySelector('#searchVal'); 
     const searchBtn = document.querySelector('#searchBtn');
+    //검색버튼 hover시
+    searchBtn.addEventListener('mouseover', function(){
+        searchBtn.getElementsByTagName('img')[0].classList.add('hide');
+        searchBtn.getElementsByTagName('img')[1].classList.remove('hide');
+    });
+    searchBtn.addEventListener('mouseout', function(){
+        searchBtn.getElementsByTagName('img')[0].classList.remove('hide');
+        searchBtn.getElementsByTagName('img')[1].classList.add('hide');
+    });
+    // searchBtn.addEventListener('mouseover', function(){
+    //     searchBtn.children[0].style.opacity=0;
+    //     searchBtn.children[1].style.opacity=1;
+    // });
+    // searchBtn.addEventListener('mouseout',function(){
+    //     searchBtn.children[0].style.opacity=1;
+    //     searchBtn.children[1].style.opacity=0;
+    // });
+
+     //검색버튼 클릭시
     searchBtn.addEventListener('click',function(){
         while (movieItemList.firstChild) {
             movieItemList.removeChild(movieItemList.firstChild);
@@ -48,11 +66,17 @@ function addMovieItemlist(xhr,movieItemList){
     const jsonRes = JSON.parse(strRes);
 
     //Search객체배열사용
-    //class 한개 받아오는 거 ..반복문뿐이 없나봄..?
-    let movieItemCnt = jsonRes.Search.length; //받아온 Search객체배열 개수
+    let movieItemCnt = '';//받아온 Search객체배열 개수
     let movieItemLi = ''; //동적으로 생성될 li태그
     let movieImg =''; //영화이미지
     let movieTit ='';//영화제목
+    
+    //if(typeof(jsonRes.Search) != 'undefined'){
+    if(jsonRes.Search){    
+        movieItemCnt = jsonRes.Search.length;
+    } else{
+        movieItemCnt = 0;
+    }
     for(let i=0; i<movieItemCnt; i++){
         //li태그 
         let li = document.createElement('li');

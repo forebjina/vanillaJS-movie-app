@@ -4,6 +4,14 @@
 body{margin:0;}
 ul,li{list-style:none;}
 p{margin:0;} /*header p 기본적으로 생기는 margin 초기화*/
+button{
+    background: inherit;
+    border:none; 
+    box-shadow:none;
+    border-radius:0; 
+    padding:0; 
+    overflow:visible; 
+    cursor:pointer}
 
 html,body{height:100%;}
 
@@ -33,11 +41,43 @@ html,body{height:100%;}
 }
 
 .searchWrap .searchBox {
+    position:relative;
     float:right;
 }
 
 .searchWrap .searchBox #searchVal{
+    height: 30px;
+    width: 300px;
+    border-radius: 30px;
     border: 1px solid #ccc;
+    padding-left: 25px;
+    padding-right: 40px;
+}
+/*after 가상요소는 content="" 필수이고, 이미지 넣을 때 background-size 넣어주고 , width/height 안 잡혀있으면 이것도 잡아줘야함*/
+/* .searchWrap .searchBox #searchBtn::after{
+    content:"";
+    background: url("../img/search.png");
+    background-repeat: no-repeat;
+    background-size:20px;
+    width:20px;
+    height:20px;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+} */
+.searchWrap .searchBox #searchBtn img{
+    width:20px;
+    height:20px;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+/* .searchWrap .searchBox #searchBtn img:nth-child(2) {
+    opacity:0;
+} */
+.searchWrap .searchBox #searchBtn img.hide {
+    opacity:0;
 }
 
 /*contents*/
